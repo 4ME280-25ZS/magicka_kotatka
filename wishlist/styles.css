@@ -1,5 +1,13 @@
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#481b1b,#2b0f0f);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
+:root{
+	--bg: #0b0b10;
+	--bg-accent-1: 230, 40, 90;
+	--bg-accent-2: 120, 70, 200;
+	--bg-accent-1a: .22;
+	--bg-accent-2a: .20;
+}
+
+body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(1200px 700px at 10% 10%, rgba(var(--bg-accent-1), var(--bg-accent-1a)), transparent 60%),radial-gradient(1200px 700px at 90% 90%, rgba(var(--bg-accent-2), var(--bg-accent-2a)), transparent 60%),var(--bg);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
 .container{max-width:720px;background:rgba(0,0,0,0.72);padding:28px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,0.6)}
 h1{font-size:1.6rem;margin-bottom:6px}
 .subtitle{color:rgba(255,255,255,0.75);margin-bottom:12px}

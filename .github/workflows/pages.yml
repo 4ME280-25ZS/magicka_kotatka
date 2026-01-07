@@ -1,27 +1,21 @@
-name: Deploy to GitHub Pages
+name: Deploy Wishlist Site to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: read
-  pages: write
-
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload Wishlist Folder
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./wishlist
-
-  deploy:
-    needs: build-and-deploy
-    runs-on: ubuntu-latest
-    steps:
+          path: 'wishlist'
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        id: deployment
+        uses: actions/deploy-pages@v4

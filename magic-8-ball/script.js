@@ -7,40 +7,40 @@ const message = document.getElementById('message');
 // Magic 8 Ball answers
 const answers = {
     positive: [
-        'Yes',
-        'Absolutely',
-        'Definitely',
-        'Certainly',
-        'It is certain',
-        'Signs point to yes',
-        'Most likely',
-        'Outlook good',
-        'Looks good!',
-        'You may rely on it'
+        'Ano',
+        'Absolutně',
+        'Určitě',
+        'Jistě',
+        'Je to jisté',
+        'Všechny znaky ukazují na ano',
+        'Velmi pravděpodobné',
+        'Vyhlídky jsou dobré',
+        'Vypadá to dobře!',
+        'Můžeš na to spolehnout'
     ],
     negative: [
-        'No',
-        'Nope',
-        'Not likely',
-        'Don\'t count on it',
-        'Very doubtful',
-        'My sources say no',
-        'Outlook not so good',
-        'Chances slim',
-        'Unlikely',
-        'Don\'t bet on it'
+        'Ne',
+        'Vůbec ne',
+        'Nepravděpodobné',
+        'Nespoléhej na to',
+        'Velmi pochybné',
+        'Moje zdroje říkají ne',
+        'Vyhlídky nejsou dobré',
+        'Šance jsou malé',
+        'Nepravděpodobné',
+        'Nesázej na to'
     ],
     neutral: [
-        'Maybe',
-        'Ask again later',
-        'Cannot predict now',
-        'Concentrate and ask again',
-        'Reply hazy, try again',
-        'Unclear',
-        'The signs are mixed',
-        'Undecided',
-        'Too early to tell',
-        'Check back later'
+        'Možná',
+        'Zeptej se znovu později',
+        'Nyní nelze předpovědět',
+        'Soustřeď se a zeptej se znovu',
+        'Odpověď je nejasná, zkus to znovu',
+        'Nejasné',
+        'Znamení jsou smíšená',
+        'Nerozhodnuto',
+        'Je příliš brzy to říct',
+        'Vrať se později'
     ]
 };
 
@@ -55,7 +55,7 @@ function shakeBall() {
     const question = questionInput.value.trim();
     
     if (!question) {
-        message.innerHTML = '<p style="color: #ff6b6b;">Please ask a question first!</p>';
+        message.innerHTML = '<p style="color: #ff6b6b;">Nejdříve polož otázku!</p>';
         return;
     }
     
@@ -105,13 +105,13 @@ function displayMessage(answer, category) {
     
     if (category === 'positive') {
         emoji = '✨';
-        text = `${emoji} ${answer}! The universe says yes! ${emoji}`;
+        text = `${emoji} ${answer}! Vesmír říká ano! ${emoji}`;
     } else if (category === 'negative') {
         emoji = '🌑';
-        text = `${emoji} ${answer}... Better luck next time! ${emoji}`;
+        text = `${emoji} ${answer}... Příště více štěstí! ${emoji}`;
     } else {
         emoji = '🔮';
-        text = `${emoji} ${answer}... The future is uncertain... ${emoji}`;
+        text = `${emoji} ${answer}... Budoucnost je nejistá... ${emoji}`;
     }
     
     // Color the message to match the category

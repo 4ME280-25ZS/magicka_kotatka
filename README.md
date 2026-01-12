@@ -1,19 +1,19 @@
 # Ezo do kapsy
 
-A new website project.
+Nový webový projekt.
 
-## Features
+## Funkce
 
-- Responsive design
-- Clean and modern layout
-- Easy to customize
+- Responzivní design
+- Čisté a moderní rozložení
+- Snadná přizpůsobitelnost
 
-## Getting Started
+## Začínáme
 
-Simply open `index.html` in your web browser to view the website.
+Jednoduše otevřete `index.html` ve vašem webovém prohlížeči pro zobrazení webu.
 
-## Files
+## Soubory
 
-- `index.html` - Main HTML file
-- `styles.css` - Stylesheet
-- `README.md` - This file
+- `index.html` - Hlavní HTML soubor
+- `styles.css` - Kaskádové styly
+- `README.md` - Tento soubor

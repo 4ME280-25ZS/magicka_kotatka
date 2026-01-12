@@ -11,7 +11,7 @@ function rollDice() {
     
     // Validate input
     if (isNaN(sides) || sides < 2 || sides > 100) {
-        result.innerHTML = '<p style="color: #ff6b6b;">Please enter a number between 2 and 100!</p>';
+        result.innerHTML = '<p style="color: #ff6b6b;">Prosím zadej číslo mezi 2 a 100!</p>';
         return;
     }
     
@@ -56,14 +56,14 @@ function rollDice() {
 }
 
 function displayResult(number, sides) {
-    let message = `You rolled a ${number}`;
+    let message = `Padlo číslo ${number}`;
     
     if (number === sides) {
         message += ` - Maximum! 🎉`;
     } else if (number === 1) {
         message += ` - Minimum! 😅`;
     } else if (number > sides * 0.75) {
-        message += ` - Great roll! 🎲`;
+        message += ` - Skvělý hod! 🎲`;
     } else {
         message += ` 🎲`;
     }

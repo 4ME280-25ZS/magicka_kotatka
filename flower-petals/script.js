@@ -40,7 +40,7 @@ function createFlower() {
     
     // Reset message
     message.className = 'message';
-    message.innerHTML = '<p>Click on the petals to find out!</p>';
+    message.innerHTML = '<p>Klikni na okvětní lístky a zjisti to!</p>';
 }
 
 function pluckPetal(petal) {
@@ -51,7 +51,7 @@ function pluckPetal(petal) {
     petal.style.pointerEvents = 'none';
     
     // Update message with current phrase
-    const text = currentPhrase ? '💖 They love me!' : '💔 They love me not...';
+    const text = currentPhrase ? '💖 Miluje mě!' : '💔 Nemiluje mě...';
     message.innerHTML = `<p>${text}</p>`;
     
     // Add animation class
@@ -71,19 +71,19 @@ function pluckPetal(petal) {
             let finalMessage;
             if (lovesYou) {
                 const loveMessages = [
-                    '💝 They love you! 💝',
-                    '❤️ Love is in the air! ❤️',
-                    '💕 True love wins! 💕',
-                    '💖 Your heart was right! 💖'
+                    '💝 Miluje tě! 💝',
+                    '❤️ Láska je ve vzduchu! ❤️',
+                    '💕 Pravá láska vítězí! 💕',
+                    '💖 Tvé srdce mělo pravdu! 💖'
                 ];
                 finalMessage = loveMessages[Math.floor(Math.random() * loveMessages.length)];
                 message.className = 'message final-loves';
             } else {
                 const notLoveMessages = [
-                    '💙 Maybe next time... 💙',
-                    '🌙 The stars say not yet... 🌙',
-                    '🍀 Try another flower! 🍀',
-                    '💫 Don\'t give up hope! 💫'
+                    '💙 Možná příště... 💙',
+                    '🌙 Hvězdy říkají ještě ne... 🌙',
+                    '🍀 Zkus jinou květinu! 🍀',
+                    '💫 Nevzdávej naději! 💫'
                 ];
                 finalMessage = notLoveMessages[Math.floor(Math.random() * notLoveMessages.length)];
                 message.className = 'message final-loves-not';

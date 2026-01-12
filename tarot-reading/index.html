@@ -24,19 +24,18 @@
             </div>
 
             <div id="result" class="result-section" style="display:none;">
-                <div class="card-container">
-                    <div class="card-image-wrapper">
-                        <img id="cardImage" src="" alt="Tarot card" class="card-image">
-                    </div>
+                <div class="card-container expanded">
                     <div class="card-info">
                         <h2 id="cardName"></h2>
                         <p class="card-details" id="cardDetails"></p>
                     </div>
                 </div>
-                
-                <div class="interpretation">
+                <div class="interpretation expanded">
                     <h3>Výklad:</h3>
                     <p id="interpretation">Načítám výklad od AI...</p>
+                    <div class="card-image-wrapper" style="margin-top:2rem;text-align:center;">
+                        <img id="cardImage" src="" alt="Tarot card" class="card-image" style="max-width:300px;box-shadow:0 4px 24px rgba(0,0,0,0.2);border-radius:12px;">
+                    </div>
                 </div>
             </div>
         </main>

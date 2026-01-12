@@ -106,6 +106,8 @@ button:disabled {
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 2px solid #e2e8f0;
+    min-height: 520px;
+    padding-bottom: 2rem;
 }
 
 .card-display {
@@ -129,9 +131,24 @@ button:disabled {
 
 .interpretation {
     background: #f7fafc;
-    padding: 1.5rem;
-    border-radius: 12px;
+    padding: 2rem 1.5rem 2.5rem 1.5rem;
+    border-radius: 16px;
     border-left: 4px solid #667eea;
+    margin-top: 2rem;
+}
+/* Expanded card image styling */
+.card-image-wrapper {
+    margin-top: 2rem;
+    text-align: center;
+}
+.card-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+    border-radius: 12px;
 }
 
 .interpretation h3 {

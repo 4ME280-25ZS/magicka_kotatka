@@ -101,6 +101,7 @@ async function provedVyklad() {
     const detailyKartyElem = document.getElementById('cardDetails');
     const interpretaceElem = document.getElementById('interpretation');
     const drawButton = document.getElementById('drawButton');
+    const cardImageElem = document.getElementById('cardImage');
 
     if (!otazka) {
         alert("Prosím, zadej otázku.");
@@ -117,7 +118,42 @@ async function provedVyklad() {
     // Zobrazíme kartu uživateli
     vysledekDiv.style.display = 'block';
     nazevKartyElem.textContent = nahodnaKarta.name;
-    
+
+    // Zobrazit obrázek karty
+    // Soubory jsou ve složce ../images/ a mají příponu .png, jméno souboru odpovídá názvu karty
+    // Nahraď diakritiku a speciální znaky v názvu karty, aby odpovídal názvu souboru
+    function normalizeCardName(name) {
+        return name
+            .replace(/á/g, 'a').replace(/č/g, 'c').replace(/ď/g, 'd').replace(/é/g, 'e').replace(/ě/g, 'e')
+            .replace(/í/g, 'i').replace(/ň/g, 'n').replace(/ó/g, 'o').replace(/ř/g, 'r').replace(/š/g, 's')
+            .replace(/ť/g, 't').replace(/ú/g, 'u').replace(/ů/g, 'u').replace(/ý/g, 'y').replace(/ž/g, 'z')
+            .replace(/Á/g, 'A').replace(/Č/g, 'C').replace(/Ď/g, 'D').replace(/É/g, 'E').replace(/Ě/g, 'E')
+            .replace(/Í/g, 'I').replace(/Ň/g, 'N').replace(/Ó/g, 'O').replace(/Ř/g, 'R').replace(/Š/g, 'S')
+            .replace(/Ť/g, 'T').replace(/Ú/g, 'U').replace(/Ů/g, 'U').replace(/Ý/g, 'Y').replace(/Ž/g, 'Z')
+            .replace(/ /g, ' ').replace(/\//g, '').replace(/-/g, '').replace(/\./g, '').replace(/\(/g, '').replace(/\)/g, '').trim();
+    }
+    // Najít odpovídající soubor v images podle názvu karty
+    // Nejprve zkus přesný název, pak s případným anglickým názvem v závorce
+    let imageFileName = null;
+    const imagesFolder = '../images/';
+    // Soubory ve složce images mají příponu .png a mohou obsahovat i anglický název v závorce
+    // Nejprve zkus variantu s anglickým názvem, pokud je v názvu karty v závorce
+    const cardName = nahodnaKarta.name;
+    // Propojit s názvy souborů (které jsou ve formátu "Jmeno (English).png" nebo "Jmeno.png")
+    // Pokud je v názvu karty v závorce anglický název, použij ten
+    const match = cardName.match(/^(.*?)( \((.*?)\))?$/);
+    let baseName = match ? match[1] : cardName;
+    let englishName = match && match[3] ? match[3] : null;
+    // Sestav název souboru
+    if (englishName) {
+        imageFileName = `${baseName.trim()} (${englishName.trim()}).png`;
+    } else {
+        imageFileName = `${baseName.trim()}.png`;
+    }
+    // Nastav src obrázku
+    cardImageElem.src = imagesFolder + imageFileName;
+    cardImageElem.alt = cardName;
+
     // Detaily karty s elementem a barvou (pokud existují)
     let detaily = `${nahodnaKarta.arcana} arkána`;
     if (nahodnaKarta.suit) {
@@ -127,7 +163,7 @@ async function provedVyklad() {
         detaily += ` (${nahodnaKarta.element})`;
     }
     detaily += ` • Klíčová slova: ${nahodnaKarta.keywords.join(', ')}`;
-    
+
     detailyKartyElem.textContent = detaily;
     interpretaceElem.textContent = "Konzultuji s hvězdami (a AI)...";
 

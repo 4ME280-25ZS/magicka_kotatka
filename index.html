@@ -3,67 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezo do kapsy</title>
+    <title>Magická Kotatka</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Ezo do kapsy</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Domů</a></li>
-                <li><a href="#features">Funkce</a></li>
-                <li><a href="#about">O nás</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <!-- Dekorativní hvězdičky v rozích -->
+        <div class="stars-decoration top-left">
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.5 2L25.5 14H38L28.25 21L31.25 33L22.5 26L13.75 33L16.75 21L7 14H19.5L22.5 2Z" fill="rgba(255, 220, 177, 1)" stroke="rgba(255, 220, 177, 0.8)" stroke-width="0.5"/>
+                <circle cx="8" cy="10" r="1.5" fill="rgba(255, 220, 177, 1)"/>
+                <circle cx="35" cy="15" r="1" fill="rgba(255, 220, 177, 0.9)"/>
+            </svg>
+        </div>
+        <div class="stars-decoration top-right">
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.5 2L25.5 14H38L28.25 21L31.25 33L22.5 26L13.75 33L16.75 21L7 14H19.5L22.5 2Z" fill="rgba(255, 220, 177, 1)" stroke="rgba(255, 220, 177, 0.8)" stroke-width="0.5"/>
+                <circle cx="37" cy="10" r="1.5" fill="rgba(255, 220, 177, 1)"/>
+                <circle cx="10" cy="15" r="1" fill="rgba(255, 220, 177, 0.9)"/>
+            </svg>
+        </div>
+        <div class="stars-decoration bottom-left">
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.5 2L25.5 14H38L28.25 21L31.25 33L22.5 26L13.75 33L16.75 21L7 14H19.5L22.5 2Z" fill="rgba(255, 220, 177, 1)" stroke="rgba(255, 220, 177, 0.8)" stroke-width="0.5"/>
+                <circle cx="8" cy="35" r="1.5" fill="rgba(255, 220, 177, 1)"/>
+                <circle cx="35" cy="30" r="1" fill="rgba(255, 220, 177, 0.9)"/>
+            </svg>
+        </div>
+        <div class="stars-decoration bottom-right">
+            <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.5 2L25.5 14H38L28.25 21L31.25 33L22.5 26L13.75 33L16.75 21L7 14H19.5L22.5 2Z" fill="rgba(255, 220, 177, 1)" stroke="rgba(255, 220, 177, 0.8)" stroke-width="0.5"/>
+                <circle cx="37" cy="35" r="1.5" fill="rgba(255, 220, 177, 1)"/>
+                <circle cx="10" cy="30" r="1" fill="rgba(255, 220, 177, 0.9)"/>
+            </svg>
+        </div>
 
-    <main>
-        <section id="home">
-            <h2>Vítejte</h2>
-            <p>Vítejte na webu Ezo do kapsy.</p>
-        </section>
+        <main class="main-content">
+            <h1 class="main-title">Vítejte!</h1>
+            <p class="subtitle">Co použijete dnes?</p>
 
-        <section id="features">
-            <h2>Funkce</h2>
-            <div class="features-grid">
-                <a href="dice-roller/index.html" class="feature-card">
-                    <div class="feature-icon">🎲</div>
-                    <h3>Házení kostkou</h3>
-                    <p>Hoď kostkou s libovolným počtem stran</p>
+            <div class="menu-buttons">
+                <a href="tarot-reading/index.html" class="menu-button">
+                    Tarotové karty
                 </a>
-                <a href="flower-petals/index.html" class="feature-card">
-                    <div class="feature-icon">🌸</div>
-                    <h3>Květinové lístky</h3>
-                    <p>Miluje mě, nemiluje...</p>
+                <a href="magic-8-ball/index.html" class="menu-button">
+                    Magická koule
                 </a>
-                <a href="magic-8-ball/index.html" class="feature-card">
-                    <div class="feature-icon">🔮</div>
-                    <h3>Magická koule</h3>
-                    <p>Polož otázku a najdi odpověď</p>
+                <a href="dice-roller/index.html" class="menu-button">
+                    Hod kostkou
                 </a>
-                <a href="tarot-reading/index.html" class="feature-card">
-                    <div class="feature-icon">🃏</div>
-                    <h3>Výklad tarotu</h3>
-                    <p>Interaktivní výklad tarotových karet</p>
+                <a href="flower-petals/index.html" class="menu-button">
+                    Květinu
                 </a>
             </div>
-        </section>
-
-        <section id="about">
-            <h2>O nás</h2>
-            <p>Toto je nový webový projekt.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Kontakt</h2>
-            <p>Spojte se s námi.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Ezo do kapsy. Všechna práva vyhrazena.</p>
-    </footer>
+        </main>
+    </div>
 </body>
 </html>

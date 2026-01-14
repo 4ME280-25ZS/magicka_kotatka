@@ -120,7 +120,7 @@ async function provedVyklad() {
     nazevKartyElem.textContent = nahodnaKarta.name;
 
     // Zobrazit obrázek karty
-    // Soubory jsou ve složce ../Images/ a mají příponu .png, jméno souboru je bez diakritiky, mezer, závorek a speciálních znaků
+    // Soubory jsou ve složce ../karty/ a mají příponu .png, jméno souboru je bez diakritiky, mezer, závorek a speciálních znaků
     function normalizeCardFileName(name) {
         return name
             .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Remove diacritics
@@ -133,10 +133,11 @@ async function provedVyklad() {
             .replace(/[áčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]/g, '') // Remove any remaining Czech diacritics
             ;
     }
-    const imagesFolder = '../Images/';
+    const imagesFolder = '../karty/';
     const cardName = nahodnaKarta.name;
     const imageFileName = normalizeCardFileName(cardName) + '.png';
-    cardImageElem.src = imagesFolder + imageFileName;
+    const cacheBust = `?v=${Date.now()}`; // force refresh so staré obrázky nezůstanou v cache
+    cardImageElem.src = imagesFolder + imageFileName + cacheBust;
     cardImageElem.alt = cardName;
 
     // Detaily karty s elementem a barvou (pokud existují)

@@ -217,7 +217,7 @@ body {
 }
 
 .answer-text {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #00ff88;
   text-shadow: 0 0 10px #00ff88;
@@ -225,6 +225,11 @@ body {
   font-family: 'Arial', sans-serif;
   text-align: center;
   padding: 0.5rem;
+  max-width: 80px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
 }
 
 /* Category-specific colors */

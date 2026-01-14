@@ -217,19 +217,19 @@ body {
 }
 
 .answer-text {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: bold;
   color: #00ff88;
   text-shadow: 0 0 8px #00ff88;
   transition: all 0.3s ease;
   font-family: 'Arial', sans-serif;
   text-align: center;
-  padding: 0.3rem;
-  max-width: 75px;
+  padding: 0.2rem;
+  max-width: 85px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  hyphens: auto;
-  line-height: 1.15;
+  hyphens: none;
+  line-height: 1.25;
 }
 
 /* Category-specific colors */

@@ -96,13 +96,13 @@ function adjustFontSize(text) {
     let fontSize;
     
     if (length <= 10) {
-        fontSize = '1.1rem';  // Short text - larger
+        fontSize = '1.3rem';  // Short text - larger
     } else if (length <= 15) {
-        fontSize = '0.9rem';  // Medium text
+        fontSize = '1.05rem';  // Medium text
     } else if (length <= 20) {
-        fontSize = '0.7rem';  // Longer text
+        fontSize = '0.85rem';  // Longer text
     } else {
-        fontSize = '0.55rem';  // Very long text - smallest
+        fontSize = '0.65rem';  // Very long text - smallest
     }
     
     answerText.style.fontSize = fontSize;

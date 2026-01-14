@@ -228,9 +228,10 @@ body {
   max-width: 115px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  word-break: keep-all;
+  word-break: normal;
   hyphens: none;
-  line-height: 1.35;
+  line-height: 1.4;
+  white-space: normal;
 }
 
 /* Category-specific colors */

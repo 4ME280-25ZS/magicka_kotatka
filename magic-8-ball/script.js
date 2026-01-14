@@ -77,6 +77,10 @@ function shakeBall() {
         // Display answer with category-specific styling
         answerText.className = 'answer-text ' + category;
         answerText.textContent = answer;
+        
+        // Adjust font size based on text length
+        adjustFontSize(answer);
+        
         magicBall.classList.remove('shaking');
         
         // Show message
@@ -85,6 +89,23 @@ function shakeBall() {
         // Re-enable button
         shakeButton.disabled = false;
     }, 1200);
+}
+
+function adjustFontSize(text) {
+    const length = text.length;
+    let fontSize;
+    
+    if (length <= 10) {
+        fontSize = '0.85rem';  // Short text - larger
+    } else if (length <= 15) {
+        fontSize = '0.75rem';  // Medium text
+    } else if (length <= 20) {
+        fontSize = '0.65rem';  // Longer text
+    } else {
+        fontSize = '0.55rem';  // Very long text - smallest
+    }
+    
+    answerText.style.fontSize = fontSize;
 }
 
 function getRandomCategory() {

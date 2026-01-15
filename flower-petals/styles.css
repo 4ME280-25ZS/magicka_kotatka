@@ -170,44 +170,6 @@ body {
   transform: translateY(-100px);
 }
 
-.stem {
-  position: absolute;
-  width: 5px;
-  height: 180px;
-  background: linear-gradient(to right, #2d5016 0%, #3d7c1f 50%, #2d5016 100%);
-  border-radius: 10px;
-  top: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.3), 2px 0 4px rgba(0, 0, 0, 0.2);
-  z-index: 3;
-}
-
-.stem::before {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 100px;
-  background: linear-gradient(135deg, #2d5016, #3d7c1f);
-  border-radius: 50%;
-  top: 50px;
-  left: -12px;
-  transform: rotate(-25deg);
-  opacity: 0.8;
-}
-
-.stem::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 80px;
-  background: linear-gradient(135deg, #2d5016, #3d7c1f);
-  border-radius: 50%;
-  top: 80px;
-  right: -10px;
-  transform: rotate(20deg);
-  opacity: 0.8;
-}
 
 .petal {
     width: 40px;

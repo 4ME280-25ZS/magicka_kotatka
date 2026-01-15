@@ -1,6 +1,5 @@
 const magicBall = document.getElementById('magicBall');
 const answerText = document.getElementById('answerText');
-const shakeButton = document.getElementById('shakeButton');
 const questionInput = document.getElementById('questionInput');
 const message = document.getElementById('message');
 
@@ -44,7 +43,16 @@ const answers = {
     ]
 };
 
-shakeButton.addEventListener('click', shakeBall);
+let isShaking = false;
+
+magicBall.addEventListener('click', shakeBall);
+magicBall.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        shakeBall();
+    }
+});
+
 questionInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         shakeBall();
@@ -52,6 +60,8 @@ questionInput.addEventListener('keypress', (e) => {
 });
 
 function shakeBall() {
+    if (isShaking) return;
+
     const question = questionInput.value.trim();
     
     if (!question) {
@@ -59,8 +69,9 @@ function shakeBall() {
         return;
     }
     
-    // Disable button during shake
-    shakeButton.disabled = true;
+    // Disable interactions during shake
+    isShaking = true;
+    magicBall.classList.add('disabled');
     // Reset answer style and content
     answerText.className = 'answer-text';
     answerText.textContent = '?';
@@ -86,8 +97,9 @@ function shakeBall() {
         // Show message
         displayMessage(answer, category);
         
-        // Re-enable button
-        shakeButton.disabled = false;
+        // Re-enable interactions
+        magicBall.classList.remove('disabled');
+        isShaking = false;
     }, 1200);
 }
 

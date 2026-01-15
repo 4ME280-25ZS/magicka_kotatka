@@ -180,6 +180,22 @@ body {
 
 .magic-ball {
   perspective: 1000px;
+  cursor: pointer;
+}
+
+.magic-ball:focus {
+  outline: none;
+}
+
+.magic-ball:focus-visible {
+  outline: 2px solid rgba(255, 220, 177, 0.9);
+  outline-offset: 6px;
+  border-radius: 999px;
+}
+
+.magic-ball.disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
 }
 
 .ball-outer {

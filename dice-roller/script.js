@@ -1,12 +1,21 @@
 const dice = document.getElementById('dice');
 const diceNumber = document.getElementById('diceNumber');
-const rollButton = document.getElementById('rollButton');
 const result = document.getElementById('result');
 const sidesInput = document.getElementById('sidesInput');
 
-rollButton.addEventListener('click', rollDice);
+let isRolling = false;
+
+dice.addEventListener('click', rollDice);
+dice.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        rollDice();
+    }
+});
 
 function rollDice() {
+    if (isRolling) return;
+
     const sides = parseInt(sidesInput.value);
     
     // Validate input
@@ -15,9 +24,10 @@ function rollDice() {
         return;
     }
     
-    // Disable button during roll
-    rollButton.disabled = true;
+    // Disable controls during roll
+    isRolling = true;
     sidesInput.disabled = true;
+    dice.classList.add('disabled');
     
     // Add rolling animation
     dice.classList.add('rolling');
@@ -46,8 +56,9 @@ function rollDice() {
                 displayResult(finalNumber, sides);
                 
                 // Re-enable controls
-                rollButton.disabled = false;
                 sidesInput.disabled = false;
+                dice.classList.remove('disabled');
+                isRolling = false;
             }, 300);
         }
     }
